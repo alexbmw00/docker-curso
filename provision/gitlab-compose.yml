@@ -5,6 +5,9 @@ services:
     image: gitlab/gitlab-ce
     ports:
     - '9090:9090'
+    volumes:
+    - gitlab-config:/etc/gitlab
+    - gitlab-data:/var/opt/gitlab
     configs:
     - source: gitlab-rb
       target: /etc/gitlab/gitlab.rb    
@@ -12,6 +15,10 @@ services:
       placement:
         constraints:
          - node.hostname == docker2
+
+volumes:
+  gitlab-data: {}
+  gitlab-config: {}
 
 configs:
   gitlab-rb:
