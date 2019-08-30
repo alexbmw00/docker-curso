@@ -2,9 +2,9 @@
 # vi: set ft=ruby :
 
 vms = {
-	'docker1' => {'memory' => '4096', 'cpus' => 2, 'ip' => '10'},
+	'docker1' => {'memory' => '3096', 'cpus' => 2, 'ip' => '10'},
 	'docker2' => {'memory' => '2048', 'cpus' => 2, 'ip' => '20'},
-	'docker3' => {'memory' => '2048', 'cpus' => 2, 'ip' => '30'}
+	'docker3' => {'memory' => '1024', 'cpus' => 2, 'ip' => '30'}
 }
 
 Vagrant.configure('2') do |config|
