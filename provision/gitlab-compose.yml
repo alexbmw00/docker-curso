@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce
+    ports:
+    - '9090:9090'
+    configs:
+    - source: gitlab-rb
+      target: /etc/gitlab/gitlab.rb    
+    deploy:
+      placement:
+        constraints:
+         - node.hostname == docker2
+
+configs:
+  gitlab-rb:
+    file: ./gitlab.rb
