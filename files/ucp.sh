@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Instala o docker universal control plane na máquina docker1
+
 docker image pull docker/ucp:3.2.0
 
 docker container run --rm -it --name ucp \
@@ -12,4 +14,4 @@ docker/ucp:3.2.0 install \
 --disable-tracking \
 --disable-usage \
 --pod-cidr 100.14.0.0/16 \
---san 'docker1.27-11-90-10.nip.io'
+--san 'ucp.27-11-90-10.nip.io'
