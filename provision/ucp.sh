@@ -12,4 +12,4 @@ docker/ucp:3.2.0 install \
 --disable-tracking \
 --disable-usage \
 --pod-cidr 100.14.0.0/16 \
---interactive
+--san 'docker1.27-11-90-10.nip.io'
