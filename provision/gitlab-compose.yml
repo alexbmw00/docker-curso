@@ -4,7 +4,7 @@ services:
   gitlab:
     image: gitlab/gitlab-ce
     ports:
-    - '9090:9090'
+    - '8181:8181'
     volumes:
     - gitlab-config:/etc/gitlab
     - gitlab-data:/var/opt/gitlab

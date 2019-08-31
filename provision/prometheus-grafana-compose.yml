@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+    - '9090:9090'
+    volumes:
+    - prometheus-data:/prometheus
+    deploy:
+      placement:
+        constraints:
+         - node.hostname == docker1
+  grafana:
+    image: grafana/grafana
+    ports:
+    - '3000:3000'
+    volumes:
+    - 'grafana-data:/var/lib/grafana'
+    deploy:
+      placement:
+        constraints:
+         - node.hostname == docker1
+
+volumes:
+  prometheus-data: {}
+  grafana-data: {}
